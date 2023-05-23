@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebrare</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="shortcut icon" href="./asset/celebrare-icon.png" type="image/x-icon">
+  <script src="./index.js" defer></script>
+
+</head>
+<body>
+  <!-- AQdding a preloader to our site -->
+  <div class="preloader">
+    <img src="./asset/message_logo.png" id="img1" alt="Image 1" class="preloader-img">
+    <img src="./asset/celebrate_logo.png" id="img2" alt="Image 2" class="preloader-img">
+  </div>
+  
+  <!-- Modal -->
+  <div id="backdrop"></div>
+  <div class="modal" id="delete-modal">
+    <div id="cross"><span class="close-button">&#x2716</span></div>
+    <h2>Uploaded Image</h2>
+    <div id="main-image"></div> <!--Image preview-->
+    <div class="selections">
+      <div id="option" class="original"><button>orignal</button></div>
+      <div id="option" class="heart"><button><img src="./asset/user_image_frame_1.png"/></button></div>
+      <div id="option" class="square"><button><img src="./asset/user_image_frame_2.png"/></button></div>
+      <div id="option" class="circle"><button><img src="./asset//user_image_frame_3.png"/></button></div>
+      <div id="option" class="rectangle" ><button ><img src="./asset/user_image_frame_4.png" style="width: 3rem;"/></button></div>
+    </div>
+    <div class="useThisBtn">
+      <button id="use-this-btn">Use this image</button>
+    </div>
+  </div>
+  
+  <!-- Navbar -->
+  <nav>
+    <h2>Add Image/Icon</h2>
+  </nav>
+  
+  <!-- upload section -->
+  <section id="upload">
+    <h2>Upload Image</h2>
+    <input id="choose-btn" type="button" class="upload-btn" value="Choose from Device"onclick="document.getElementById('file').click();" />
+    <input type="file" style="display:none;" id="file" name="file"/>
+    
+  </section>
+  
+  <!-- The main image to be displayed -->
+  <section id="display-image">
+    <div id="img-grid">
+      
+    </div>
+  </section>
+
+  
+ <!-- Adding firebase sdk script to our app -->
+ <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+</body>
+</html>

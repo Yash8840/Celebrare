@@ -1,0 +1,224 @@
+:root{
+  --badgeu: "M105.833 31.7333C78.2813 -20.965 0.833328 -5.57667 0.833328 60.445C0.833328 103.903 46.4558 150.593 98.5148 206.745C100.552 208.95 103.198 210.047 105.833 210.047C108.469 210.047 111.115 208.95 113.152 206.745C165.41 150.383 210.833 103.915 210.833 60.445C210.833 -5.79834 133.175 -20.5683 105.833 31.7333Z";
+
+  --smallu:"M79.3333 22.5293C58.7349 -14.8615 0.833328 -3.94311 0.833328 42.9009C0.833328 73.7357 34.9416 106.863 73.8619 146.704C75.3848 148.269 77.363 149.047 79.3333 149.047C81.3037 149.047 83.2819 148.269 84.8048 146.704C123.874 106.714 157.833 73.744 157.833 42.9009C157.833 -4.10039 99.7747 -14.5801 79.3333 22.5293Z";
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+#img1 {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#img2{
+  position:absolute ;
+  /* top: 50%; */
+  /* left: 40%; */
+  width: 10rem;
+  top: 63%;
+  left: 45%;
+}
+
+.preloader-img:first-child {
+  z-index: 1;
+}
+
+.preloader-img:last-child {
+  z-index: 2;
+}
+
+/* Heading */
+nav{
+  background-color: transparent;
+  width: 100vw;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color: grey;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+nav h2{
+  font-weight: normal;
+}
+/* upload image bar */
+.upload-btn{
+  margin-top: 1.5rem;
+  padding: 0.7rem 2rem 0.7rem 2rem;
+  background-color: seagreen;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#upload{
+  padding-top: 2rem;
+  padding-bottom: 0.7rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+  color: grey;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  z-index: 100;
+  background: white;
+  border-radius: 10px;
+  width: 50%;
+  top: 25vh;
+  /* left: 10%; */
+  left: 25%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  display: none; /*we change it to display:flex when we open the modal*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .3rem;
+}
+.modal h2{
+  font-style: italic;
+  color: grey;
+  font-weight: lighter;
+  display: block;
+  /* font-size: large; */
+}
+#main-image{
+  width: 8rem;
+  height: 9rem;
+  background-image: url('https://i.stack.imgur.com/h6viz.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.small_heart{
+  clip-path: path(var(--smallu));
+  
+}
+.selections{
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+.original{
+  margin-right: 1.7rem;
+  /* margin-top: .2rem; */
+}
+.original button{
+  padding: .6rem;
+}
+#option{
+  width: 2rem;
+  height: 2rem;
+}
+
+#option img{
+  width: 2rem;
+  height: 2rem;
+}
+
+#option button{
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.useThisBtn{
+  margin-top: 1rem;
+}
+.useThisBtn button{
+  padding: 0.7rem 2rem 0.7rem 2rem;
+  background-color: seagreen;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* cross button */
+#cross{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#cross span{
+  width: 2rem;
+  height: 2rem;
+}
+#cross:hover{
+  cursor: pointer;
+}
+.visible{
+  display: block;
+}
+
+.modal.visible {
+  display: block;
+  animation: fade-slide-in 0.3s ease-out forwards;
+}
+
+#backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  pointer-events: none;
+  display: none;
+}
+
+#backdrop.visible {
+  display: block;
+  pointer-events: all;
+}
+
+/* display image div */
+#display-image{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#display-image div{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 280px;
+  width: 250px;
+  
+}
+.heartwa{
+  clip-path: path(var(--badgeu));
+  background-repeat: repeat;
+  height: 212px;
+  width: 212px;
+}
+
+/* media queries */
+@media(max-width: 537px){
+  .modal{
+    width: 80vw;
+    left: 10%;
+  }
+}
